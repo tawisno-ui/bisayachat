@@ -292,10 +292,25 @@ body {
   }
 }
 
-/* ===== MOVE INPUT AREA UP ONLY ON MOBILE ===== */
+
+/* ===== MOBILE INPUT FIX (RAISED BUT SAFE) ===== */
 
 @media (max-width: 768px) {
+
+  /* give space so messages won't go under input */
+  .chat-container {
+    padding-bottom: 80px;
+  }
+
+  /* move input slightly up (safe way, not transform) */
   .input-area {
-    transform: translateY(-25px);
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* extra scroll space so last messages are visible */
+  .messages {
+    padding-bottom: 120px;
   }
 }
